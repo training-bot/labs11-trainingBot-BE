@@ -1,5 +1,6 @@
 const express = require('express');
 const { ApolloServer, gql } = require('apollo-server-express');
+const schema = require('./apollo/schema');
 
 // Construct a schema, using GraphQL schema language
 const typeDefs = gql`
@@ -23,6 +24,10 @@ server.applyMiddleware({ app });
 app.listen({ port: 4000 }, () =>
 	console.log(`🚀 Server ready at http://localhost:4000${server.graphqlPath}`)
 );
+
+app.get('/', (req, res) => {
+	res.send('Sanity Check!');
+});
 
 // require("dotenv").config();
 
