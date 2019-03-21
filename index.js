@@ -1,6 +1,32 @@
-require("dotenv").config();
+const express = require('express');
+const { ApolloServer, gql } = require('apollo-server-express');
 
-const server = require("./server");
+// Construct a schema, using GraphQL schema language
+const typeDefs = gql`
+	type Query {
+		hello: String
+	}
+`;
 
-const port = process.env.PORT || 5000;
-server.listen(port, () => console.log(`\n** Running on port ${port} **\n`));
+// Provide resolver functions for your schema fields
+const resolvers = {
+	Query: {
+		hello: () => 'Hello world!',
+	},
+};
+
+const server = new ApolloServer({ typeDefs, resolvers });
+
+const app = express();
+server.applyMiddleware({ app });
+
+app.listen({ port: 4000 }, () =>
+	console.log(`🚀 Server ready at http://localhost:4000${server.graphqlPath}`)
+);
+
+// require("dotenv").config();
+
+// const server = require("./server");
+
+// const port = process.env.PORT || 5000;
+// server.listen(port, () => console.log(`\n** Running on port ${port} **\n`));
