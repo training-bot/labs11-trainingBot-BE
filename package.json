@@ -1,49 +1,49 @@
 {
-	"name": "auth-ii",
-	"version": "1.0.0",
-	"description": "## Topics",
-	"main": "index.js",
-	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1",
-		"start": "node index.js",
-		"server": "nodemon index.js"
-	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/Blent1050/auth-ii.git"
-	},
-	"author": "",
-	"license": "ISC",
-	"bugs": {
-		"url": "https://github.com/Blent1050/auth-ii/issues"
-	},
-	"homepage": "https://github.com/Blent1050/auth-ii#readme",
-	"dependencies": {
-		"@sendgrid/mail": "^6.3.1",
-		"bcrypt": "^3.0.4",
-		"connect-session-knex": "^1.4.0",
-		"cors": "^2.8.5",
-		"cron": "^1.7.0",
-		"dotenv": "^6.2.0",
-		"express": "^4.16.4",
-		"express-jwt": "^5.3.1",
-		"express-jwt-authz": "^2.3.1",
-		"express-session": "^1.15.6",
-		"faker": "^4.1.0",
-		"google-libphonenumber": "^3.2.2",
-		"helmet": "^3.15.1",
-		"jsonwebtoken": "^8.5.1",
-		"jwks-rsa": "^1.4.0",
-		"jwt-decode": "^2.2.0",
-		"knex": "^0.16.3",
-		"moment": "^2.24.0",
-		"mysql": "^2.16.0",
-		"pg": "^7.8.1",
-		"sqlite3": "^4.0.6",
-		"stripe": "^6.28.0",
-		"twilio": "^3.29.2"
-	},
-	"devDependencies": {
-		"nodemon": "^1.18.10"
-	}
+    "name": "training-bot",
+    "version": "1.0.0",
+    "description": "## Topics",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node index.js",
+        "server": "nodemon index.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/training-bot/labs11-trainingBot-BE.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/training-bot/labs11-trainingBot-BE/issues"
+    },
+    "homepage": "https://github.com/training-bot/labs11-trainingBot-BE",
+    "dependencies": {
+        "@sendgrid/mail": "^6.3.1",
+        "bcrypt": "^3.0.4",
+        "connect-session-knex": "^1.4.0",
+        "cors": "^2.8.5",
+        "cron": "^1.7.0",
+        "dotenv": "^6.2.0",
+        "express": "^4.16.4",
+        "express-jwt": "^5.3.1",
+        "express-jwt-authz": "^2.3.1",
+        "express-session": "^1.15.6",
+        "faker": "^4.1.0",
+        "google-libphonenumber": "^3.2.2",
+        "helmet": "^3.15.1",
+        "jsonwebtoken": "^8.5.1",
+        "jwks-rsa": "^1.4.0",
+        "jwt-decode": "^2.2.0",
+        "knex": "^0.16.3",
+        "moment": "^2.24.0",
+        "mysql": "^2.16.0",
+        "pg": "^7.8.1",
+        "sqlite3": "^4.0.6",
+        "stripe": "^6.28.0",
+        "twilio": "^3.29.2"
+    },
+    "devDependencies": {
+        "nodemon": "^1.18.10"
+    }
 }
