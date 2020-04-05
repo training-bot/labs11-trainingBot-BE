@@ -1,14 +1,13 @@
 //Dependencies
 const express = require("express"),
 	helmet = require("helmet"),
-	cors = require("cors"),
-	morgan = require("morgan");
+	cors = require("cors");
 
 //Server to point to
 const server = express();
 
 //Library Middleware
-server.use(helmet(), express.json(), cors(), morgan("dev"));
+server.use(helmet(), express.json(), cors());
 
 // twilio notification system import
 const notificationSystem = require("./notificationSystem/startSystem");
