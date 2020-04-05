@@ -37,7 +37,6 @@ router.get("/:id", async (req, res) => {
 
 // POST a new team member
 router.post("/", async (req, res) => {
-	console.log("request: ", req.body);
 	try {
 		const { firstName, lastName, jobDescription, phoneNumber, userID } = req.body;
 

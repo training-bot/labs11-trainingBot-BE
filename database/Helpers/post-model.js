@@ -1,51 +1,44 @@
 const db = require("../dbConfig.js");
 
 module.exports = {
-  add,
-  find,
-  findBy,
-  findById,
-  addPostSeeds,
-  update,
-  remove
+	add,
+	find,
+	findBy,
+	findById,
+	addPostSeeds,
+	update,
+	remove,
 };
 
 function find() {
-  return db("Post");
+	return db("Post");
 }
 
 function findBy(filter) {
-  return db("Post").where(filter);
+	return db("Post").where(filter);
 }
 
 async function add(post) {
-  const [id] = await db("Post").insert(post, "id");
-
-  return findById(id);
+	const [id] = await db("Post").returning("postID").insert(post);
+	let result = await findById(id);
+	return result;
 }
 
-function findById(id) {
-  return db("Post")
-    .where({ postID: id })
-    .first();
+async function findById(id) {
+	let result = await db("Post").where({ postID: id });
+	return result[0];
 }
 
 function addPostSeeds(posts) {
-  return db("Post").insert(posts);
+	return db("Post").insert(posts);
 }
 
-
 async function update(id, post) {
-  await db("Post")
-    .where({ postID: id })
-    .update(post);
+	await db("Post").where({ postID: id }).update(post);
 
-  return await findById(id);
+	return await findById(id);
 }
 
 function remove(id) {
-  return db("Post")
-    .where({ postID: id })
-    .del();
+	return db("Post").where({ postID: id }).del();
 }
-
