@@ -1,18 +1,19 @@
 //Dependencies
 const express = require("express"),
-  helmet = require("helmet"),
-  cors = require("cors");
+	helmet = require("helmet"),
+	cors = require("cors"),
+	morgan = require("morgan");
 
 //Server to point to
 const server = express();
 
 //Library Middleware
-server.use(helmet(), express.json(), cors());
+server.use(helmet(), express.json(), cors(), morgan("dev"));
 
 // twilio notification system import
 const notificationSystem = require("./notificationSystem/startSystem");
 
-const {authenticate} = require("./auth/authenticate");
+const { authenticate } = require("./auth/authenticate");
 
 //Routes
 const usersRouter = require("./routes/userRouter");
@@ -34,7 +35,7 @@ server.use("/api/stripe", stripeRouter);
 
 //Default Endpoints
 server.get("/", (req, res) => {
-  res.send("It works!");
+	res.send("It works!");
 });
 
 // turn on notification interval system

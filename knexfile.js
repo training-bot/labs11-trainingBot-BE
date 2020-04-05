@@ -1,19 +1,34 @@
-require('dotenv').config();
+require("dotenv").config();
 
 module.exports = {
 	development: {
-		client: 'pg',
+		client: "pg",
+		// connection: process.env.DATABASE_URL,
 		connection: {
-			host: 'localhost',
-			user: 'postgres',
-			password: 'postgres',
-			database: 'postgres'
+			host: process.env.DB_HOST,
+			user: process.env.DB_USER,
+			password: process.env.DB_PASSWORD,
+			database: process.env.DB_NAME,
+			ssl: true,
 		},
+		// connection: {
+		// 	host: 'localhost',
+		// 	user: 'postgres',
+		// 	password: 'postgres',
+		// 	database: 'postgres'
+		// },
 	},
 	production: {
-		client: 'pg',
-		connection: process.env.DATABASE_URL
-	}
+		client: "pg",
+		// connection: process.env.DATABASE_URL,
+		connection: {
+			host: process.env.DB_HOST,
+			user: process.env.DB_USER,
+			password: process.env.DB_PASSWORD,
+			database: process.env.DB_NAME,
+			ssl: true,
+		},
+	},
 
 	// development: {
 	// 	client: 'mysql',
